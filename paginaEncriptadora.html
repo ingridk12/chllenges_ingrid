@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador y Desencriptador</title>
+    <script src="encriptador.js"></script> <!-- Asegúrate de ajustar el nombre del archivo JS -->
+</head>
+<body>
+    <h1>Encriptador y Desencriptador de Palabras</h1>
+
+    <label for="inputPalabra">Ingresa una palabra:</label>
+    <input type="text" id="inputPalabra">
+    <button onclick="encriptarYMostrar()">Encriptar</button>
+    <button onclick="desencriptarYMostrar()">Desencriptar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function encriptarYMostrar() {
+            let palabra = document.getElementById('inputPalabra').value.trim();
+            let palabraEncriptada = encriptar(palabra);
+            document.getElementById('resultado').innerText = `Palabra encriptada: ${palabraEncriptada}`;
+        }
+
+        function desencriptarYMostrar() {
+            let palabraEncriptada = document.getElementById('inputPalabra').value.trim();
+            let palabraDesencriptada = desencriptar(palabraEncriptada);
+            document.getElementById('resultado').innerText = `Palabra desencriptada: ${palabraDesencriptada}`;
+        }
+    </script>
+</body>
+</html>
